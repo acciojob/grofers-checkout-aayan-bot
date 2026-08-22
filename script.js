@@ -9,8 +9,12 @@ const getSum = () => {
 	for(let i=0; i < a.length;i++){
 		sum += parseInt(a[i].textContent);
 	}
-	
-	const getSumnum = document.createElement("tr");
+	let table=document.queryselector("table");
+	const row= document.createElement("tr");
+	let data=document.createElement("td");
+	data.id="ans"
+	row.appendchild(data)
+	table.appendChild(row)
 getSumnum.append(sum);
 document.body.appendChild(getSumnum);
 	
