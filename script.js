@@ -9,7 +9,7 @@ const getSum = () => {
 	for(let i=0; i < a.length;i++){
 		sum += parseInt(a[i].textContent);
 	}
-	let table=document.queryselector("table");
+	let table=document.querySelector("table");
 	const row= document.createElement("tr");
 	let data=document.createElement("td");
 	data.id="ans";
