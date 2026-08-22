@@ -3,24 +3,30 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-//Add your code here
-	let a=document.querySelectorAll(".price")
-	let sum=0;
-	for(let i=0; i < a.length;i++){
-		sum += parseInt(a[i].textContent);
-	}
-	let table=document.querySelector("table");
-	const row= document.createElement("tr");
-	let data=document.createElement("td");
-	data.id="ans";
-	data.textContent=sum;
-	row.appendChild(data)
-	table.appendChild(row)
+  // Remove existing answer row if present
+  const existingAns = document.getElementById("ans");
+  if (existingAns) {
+    existingAns.parentElement.remove();
+  }
 
+  let prices = document.querySelectorAll(".price");
+  let sum = 0;
+  
+  prices.forEach(p => {
+    sum += parseInt(p.textContent) || 0;
+  });
 
-	
+  let table = document.querySelector("table");
+  const row = document.createElement("tr");
+  let data = document.createElement("td");
+  
+  data.id = "ans";
+  data.setAttribute("colspan", "2");
+  data.textContent = sum;
+  
+  row.appendChild(data);
+  table.appendChild(row);
 };
-
 
 getSumBtn.addEventListener("click", getSum);
 
