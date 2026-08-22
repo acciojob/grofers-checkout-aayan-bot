@@ -12,11 +12,12 @@ const getSum = () => {
 	let table=document.queryselector("table");
 	const row= document.createElement("tr");
 	let data=document.createElement("td");
-	data.id="ans"
-	row.appendchild(data)
+	data.id="ans";
+	data.textContent=sum;
+	row.appendChild(data)
 	table.appendChild(row)
-getSumnum.append(sum);
-document.body.appendChild(getSumnum);
+
+
 	
 };
 
